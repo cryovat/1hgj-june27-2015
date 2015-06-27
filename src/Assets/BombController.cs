@@ -6,7 +6,7 @@ public class BombController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Time.smoothDeltaTime * -3, 0, 0);
+        transform.Translate(Time.smoothDeltaTime * -4, 0, 0);
     }
 
     public void OnBecameInvisible()

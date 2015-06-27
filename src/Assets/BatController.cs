@@ -4,7 +4,7 @@ using System.Threading;
 
 public class BatController : MonoBehaviour
 {
-    public const float OriginalLife = 5f;
+    public const float OriginalLife = 7f;
 
     private SpriteRenderer _renderer;
     private float _counter;
@@ -14,6 +14,8 @@ public class BatController : MonoBehaviour
     public Sprite altSprite;
     public int score = 0;
     public float life = OriginalLife;
+
+    public GameObject canvas;
 
 	// Use this for initialization
 	void Start ()
@@ -51,21 +53,29 @@ public class BatController : MonoBehaviour
 
 	    if (Input.GetKey(KeyCode.UpArrow))
 	    {
-	        gameObject.transform.Translate(0, delta * 5, 0);
+	        if (gameObject.transform.position.y < 3.5) gameObject.transform.Translate(0, delta * 5, 0);
 	    }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            gameObject.transform.Translate(0, delta * -5, 0);
+            if (gameObject.transform.position.y > -3.5) gameObject.transform.Translate(0, delta * -5, 0);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            gameObject.transform.Translate(delta * -5, 0, 0);
+            if (gameObject.transform.position.y > -5) gameObject.transform.Translate(delta * -5, 0, 0);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            gameObject.transform.Translate(delta * 5, 0, 0);
+            if (gameObject.transform.position.y < 5) gameObject.transform.Translate(delta * 5, 0, 0);
         }
 
 	}
+
+    public void OnDestroy()
+    {
+        Debug.Log("ohai");
+        canvas.SetActive(true);
+    }
+
+
 }
