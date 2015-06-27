@@ -1,2 +1,3 @@
-# 1hgj-june27-2015
-1 Hour Game Jam - June 27th 2015 entry http://weekjam.com
+# 1HGJ#9 Entry
+
+### Play it: [:rocket: Original](http://www.winterday.net/games/1hrgj/2015/june/27/)
